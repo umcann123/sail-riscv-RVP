@@ -12,22 +12,22 @@
 
 
 val exts16 :
-  (bits (8)) -> bits (16)
-function exts16 (v) =
-  let result : bits(16) = EXTS (v) in
+  (bits(8)) -> bits(16)
+function exts16(v) =
+  let result : bits(16) = EXTS(v) in
   slice(result, 0, 16)
 
 val extz16 :
-  (bits (8)) -> bits (16)
-function extz16 (v) =
-  let result : bits(16) = EXTZ (v) in
+  (bits(8)) -> bits(16)
+function extz16(v) =
+  let result : bits(16) = EXTZ(v) in
   slice(result, 0, 16)
 
 
 /* *****************************************************************/
 
 val PEXT_SUNPKD810 : (regidx, regidx) -> bool effect {escape,rreg,wreg}
-function PEXT_SUNPKD810 (rs1, rd) = {
+function PEXT_SUNPKD810(rs1, rd) = {
   let result : xlenbits =
     if sizeof(xlen) == 32
     then exts16(rB(rs1, 1)) @ exts16(rB(rs1, 0))
@@ -39,7 +39,7 @@ function PEXT_SUNPKD810 (rs1, rd) = {
 /* *****************************************************************/
 
 val PEXT_SUNPKD820 : (regidx, regidx) -> bool effect {escape,rreg,wreg}
-function PEXT_SUNPKD820 (rs1, rd) = {
+function PEXT_SUNPKD820(rs1, rd) = {
   let result : xlenbits =
     if sizeof(xlen) == 32
     then exts16(rB(rs1, 2)) @ exts16(rB(rs1, 0))
@@ -51,7 +51,7 @@ function PEXT_SUNPKD820 (rs1, rd) = {
 /* *****************************************************************/
 
 val PEXT_SUNPKD830 : (regidx, regidx) -> bool effect {escape,rreg,wreg}
-function PEXT_SUNPKD830 (rs1, rd) = {
+function PEXT_SUNPKD830(rs1, rd) = {
   let result : xlenbits =
     if sizeof(xlen) == 32
     then exts16(rB(rs1, 3)) @ exts16(rB(rs1, 0))
@@ -63,7 +63,7 @@ function PEXT_SUNPKD830 (rs1, rd) = {
 /* *****************************************************************/
 
 val PEXT_SUNPKD831 : (regidx, regidx) -> bool effect {escape,rreg,wreg}
-function PEXT_SUNPKD831 (rs1, rd) = {
+function PEXT_SUNPKD831(rs1, rd) = {
   let result : xlenbits =
     if sizeof(xlen) == 32
     then exts16(rB(rs1, 3)) @ exts16(rB(rs1, 1))
@@ -75,7 +75,7 @@ function PEXT_SUNPKD831 (rs1, rd) = {
 /* *****************************************************************/
 
 val PEXT_SUNPKD832 : (regidx, regidx) -> bool effect {escape,rreg,wreg}
-function PEXT_SUNPKD832 (rs1, rd) = {
+function PEXT_SUNPKD832(rs1, rd) = {
   let result : xlenbits =
     if sizeof(xlen) == 32
     then exts16(rB(rs1, 3)) @ exts16(rB(rs1, 2))
@@ -87,7 +87,7 @@ function PEXT_SUNPKD832 (rs1, rd) = {
 /* *****************************************************************/
 
 val PEXT_ZUNPKD810: (regidx, regidx) -> bool effect {escape,rreg,wreg}
-function PEXT_ZUNPKD810 (rs1, rd) = {
+function PEXT_ZUNPKD810(rs1, rd) = {
   let result : xlenbits =
     if sizeof(xlen) == 32
     then extz16(rB(rs1, 1)) @ extz16(rB(rs1, 0))
@@ -99,7 +99,7 @@ function PEXT_ZUNPKD810 (rs1, rd) = {
 /* *****************************************************************/
 
 val PEXT_ZUNPKD820 : (regidx, regidx) -> bool effect {escape,rreg,wreg}
-function PEXT_ZUNPKD820 (rs1, rd) = {
+function PEXT_ZUNPKD820(rs1, rd) = {
   let result : xlenbits =
     if sizeof(xlen) == 32
     then extz16(rB(rs1, 2)) @ extz16(rB(rs1, 0))
@@ -111,7 +111,7 @@ function PEXT_ZUNPKD820 (rs1, rd) = {
 /* *****************************************************************/
 
 val PEXT_ZUNPKD830 : (regidx, regidx) -> bool effect {escape,rreg,wreg}
-function PEXT_ZUNPKD830 (rs1, rd) = {
+function PEXT_ZUNPKD830(rs1, rd) = {
   let result : xlenbits =
     if sizeof(xlen) == 32
     then extz16(rB(rs1, 3)) @ extz16(rB(rs1, 0))
@@ -123,7 +123,7 @@ function PEXT_ZUNPKD830 (rs1, rd) = {
 /* *****************************************************************/
 
 val PEXT_ZUNPKD831 : (regidx, regidx) -> bool effect {escape,rreg,wreg}
-function PEXT_ZUNPKD831 (rs1, rd) = {
+function PEXT_ZUNPKD831(rs1, rd) = {
   let result : xlenbits =
     if sizeof(xlen) == 32
     then extz16(rB(rs1, 3)) @ extz16(rB(rs1, 1))
@@ -135,7 +135,7 @@ function PEXT_ZUNPKD831 (rs1, rd) = {
 /* *****************************************************************/
 
 val PEXT_ZUNPKD832 : (regidx, regidx) -> bool effect {escape,rreg,wreg}
-function PEXT_ZUNPKD832 (rs1, rd) = {
+function PEXT_ZUNPKD832(rs1, rd) = {
   let result : xlenbits =
     if sizeof(xlen) == 32
     then extz16(rB(rs1, 3)) @ extz16(rB(rs1, 2))

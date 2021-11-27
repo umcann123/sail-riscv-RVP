@@ -10,72 +10,72 @@
 /* ********************* auxiliary functions ***********************/
 /* *****************************************************************/
 
-val cmpeq16 : 
+val cmpeq16 :
   (bits(16), bits(16)) -> bits(16)
-function cmpeq16 (v1, v2) =
+function cmpeq16(v1, v2) =
   if v1 == v2
   then 0xFFFF
   else 0x0000
 
 val scmplt16 :
   (bits(16), bits(16)) -> bits(16)
-function scmplt16 (v1, v2) =
+function scmplt16(v1, v2) =
   if signed(v1) < signed(v2)
   then 0xFFFF
   else 0x0000
 
 val scmple16 :
   (bits(16), bits(16)) -> bits(16)
-function scmple16 (v1, v2) =
+function scmple16(v1, v2) =
   if signed(v1) <= signed(v2)
   then 0xFFFF
   else 0x0000
 
 val ucmplt16 :
   (bits(16), bits(16)) -> bits(16)
-function ucmplt16 (v1, v2) =
+function ucmplt16(v1, v2) =
   if unsigned(v1) < unsigned(v2)
   then 0xFFFF
   else 0x0000
 
 val ucmple16 :
   (bits(16), bits(16)) -> bits(16)
-function ucmple16 (v1, v2) =
+function ucmple16(v1, v2) =
   if unsigned(v1) <= unsigned(v2)
   then 0xFFFF
   else 0x0000
 
-val cmpeq8 : 
+val cmpeq8 :
   (bits(8), bits(8)) -> bits(8)
-function cmpeq8 (v1, v2) =
+function cmpeq8(v1, v2) =
   if v1 == v2
   then 0xFF
   else 0x00
 
 val scmplt8 :
   (bits(8), bits(8)) -> bits(8)
-function scmplt8 (v1, v2) =
+function scmplt8(v1, v2) =
   if signed(v1) < signed(v2)
   then 0xFF
   else 0x00
 
 val scmple8 :
   (bits(8), bits(8)) -> bits(8)
-function scmple8 (v1, v2) =
+function scmple8(v1, v2) =
   if signed(v1) <= signed(v2)
   then 0xFF
   else 0x00
 
 val ucmplt8 :
   (bits(8), bits(8)) -> bits(8)
-function ucmplt8 (v1, v2) =
+function ucmplt8(v1, v2) =
   if unsigned(v1) < unsigned(v2)
   then 0xFF
   else 0x00
 
 val ucmple8 :
   (bits(8), bits(8)) -> bits(8)
-function ucmple8 (v1, v2) =
+function ucmple8(v1, v2) =
   if unsigned(v1) <= unsigned(v2)
   then 0xFF
   else 0x00

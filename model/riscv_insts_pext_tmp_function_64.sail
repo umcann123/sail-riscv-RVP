@@ -825,7 +825,7 @@ mapping clause encdec = P_INST_RS2_RS1_RD(rs2, rs1, rd, URSUB32) <->
 mapping clause assembly = P_INST_RS2_RS1_RD(rs2, rs1, rd, p_inst)
   <-> p_inst_rs2_rs1_rd_mapping(p_inst) ^ spc() ^ reg_name(rd) ^ sep() ^ reg_name(rs1) ^ sep() ^ reg_name(rs2)
 
-function clause execute (P_INST_RS2_RS1_RD(rs2, rs1, rd, p_inst)) = {
+function clause execute(P_INST_RS2_RS1_RD(rs2, rs1, rd, p_inst)) = {
   let success : bool = match p_inst {
     ADD8 => PEXT_ADD8(rs2, rs1, rd),
     ADD16 => PEXT_ADD16(rs2, rs1, rd),
@@ -1122,7 +1122,7 @@ mapping clause encdec = P_INST_IMM6_RS1_RD(imm6, rs1, rd, SRAI_U) <->
 mapping clause assembly = P_INST_IMM6_RS1_RD(imm6, rs1, rd, p_inst)
   <-> p_inst_imm6_rs1_rd_mapping(p_inst) ^ spc() ^ reg_name(rd) ^ sep() ^ reg_name(rs1) ^ sep() ^ hex_bits_6(imm6)
 
-function clause execute (P_INST_IMM6_RS1_RD(imm6, rs1, rd, p_inst)) = {
+function clause execute(P_INST_IMM6_RS1_RD(imm6, rs1, rd, p_inst)) = {
   let result : bool = match p_inst {
     BITREVI => PEXT_BITREVI(imm6, rs1, rd),
     SRAI_U => PEXT_SRAI_U(imm6, rs1, rd)
@@ -1141,7 +1141,7 @@ mapping clause encdec = P_INST_RS3_RS2_RS1_RD(rs3, rs2, rs1, rd, BPICK) <->
 mapping clause assembly = P_INST_RS3_RS2_RS1_RD(rs3, rs2, rs1, rd, p_inst)
   <-> p_inst_rs3_rs2_rs1_rd_mapping(p_inst) ^ spc() ^ reg_name(rd) ^ sep() ^ reg_name(rs1) ^ sep() ^ reg_name(rs2) ^ sep() ^ reg_name(rs3)
 
-function clause execute (P_INST_RS3_RS2_RS1_RD(rs3, rs2, rs1, rd, p_inst)) = {
+function clause execute(P_INST_RS3_RS2_RS1_RD(rs3, rs2, rs1, rd, p_inst)) = {
   let result : bool = match p_inst {
     BPICK => PEXT_BPICK(rs3, rs2, rs1, rd)
   };
@@ -1228,7 +1228,7 @@ mapping clause encdec = P_INST_RS1_RD(rs1, rd, KABS32) <->
 mapping clause assembly = P_INST_RS1_RD(rs1, rd, p_inst)
   <-> p_inst_rs1_rd_mapping(p_inst) ^ spc() ^ reg_name(rd) ^ sep() ^ reg_name(rs1)
 
-function clause execute (P_INST_RS1_RD(rs1, rd, p_inst)) = {
+function clause execute(P_INST_RS1_RD(rs1, rd, p_inst)) = {
   let result : bool = match p_inst {
     CLRS8 => PEXT_CLRS8(rs1, rd),
     CLRS16 => PEXT_CLRS16(rs1, rd),
@@ -1293,7 +1293,7 @@ mapping clause encdec = P_INST_IMM3_RS1_RD(imm3, rs1, rd, UCLIP8) <->
 mapping clause assembly = P_INST_IMM3_RS1_RD(imm3, rs1, rd, p_inst)
   <-> p_inst_imm3_rs1_rd_mapping(p_inst) ^ spc() ^ reg_name(rd) ^ sep() ^ reg_name(rs1) ^ sep() ^ hex_bits_3(imm3)
 
-function clause execute (P_INST_IMM3_RS1_RD(imm3, rs1, rd, p_inst)) = {
+function clause execute(P_INST_IMM3_RS1_RD(imm3, rs1, rd, p_inst)) = {
   let result : bool = match p_inst {
     INSB => PEXT_INSB(imm3, rs1, rd),
     KSLLI8 => PEXT_KSLLI8(imm3, rs1, rd),
@@ -1349,7 +1349,7 @@ mapping clause encdec = P_INST_IMM5_RS1_RD(imm5, rs1, rd, SRLI32_U) <->
 mapping clause assembly = P_INST_IMM5_RS1_RD(imm5, rs1, rd, p_inst)
   <-> p_inst_imm5_rs1_rd_mapping(p_inst) ^ spc() ^ reg_name(rd) ^ sep() ^ reg_name(rs1) ^ sep() ^ hex_bits_5(imm5)
 
-function clause execute (P_INST_IMM5_RS1_RD(imm5, rs1, rd, p_inst)) = {
+function clause execute(P_INST_IMM5_RS1_RD(imm5, rs1, rd, p_inst)) = {
   let result : bool = match p_inst {
     KSLLIW => PEXT_KSLLIW(imm5, rs1, rd),
     SCLIP32 => PEXT_SCLIP32(imm5, rs1, rd),
@@ -1398,7 +1398,7 @@ mapping clause encdec = P_INST_IMM4_RS1_RD(imm4, rs1, rd, UCLIP16) <->
 mapping clause assembly = P_INST_IMM4_RS1_RD(imm4, rs1, rd, p_inst)
   <-> p_inst_imm4_rs1_rd_mapping(p_inst) ^ spc() ^ reg_name(rd) ^ sep() ^ reg_name(rs1) ^ sep() ^ hex_bits_4(imm4)
 
-function clause execute (P_INST_IMM4_RS1_RD(imm4, rs1, rd, p_inst)) = {
+function clause execute(P_INST_IMM4_RS1_RD(imm4, rs1, rd, p_inst)) = {
   let result : bool = match p_inst {
     KSLLI16 => PEXT_KSLLI16(imm4, rs1, rd),
     SCLIP16 => PEXT_SCLIP16(imm4, rs1, rd),

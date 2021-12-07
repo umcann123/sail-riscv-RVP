@@ -1,6 +1,7 @@
-/* Programming Langauge Lab, Department of Computer Science, National Tsing-Hua University, Taiwan */
-/* Academia Sinica, Taiwan*/
-/* Andes Technology Corporation*/
+/* This work is contributed by from Programming Langauge Lab, NTHU (National Tsing-Hua University), 
+Taiwan, Academia Sinica(Taiwan), and Andes Technology Corporation. This work is refered to the talk
+entitled "Sail Specification for RISC-V P-Extension" in RISC-V Summit, Dec. 2021.*/
+
 
 /* *****************************************************************/
 /* This file specifies the instruction added by the 'P' extension. */
